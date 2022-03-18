@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body {
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -35,17 +39,33 @@ body {
 /* Titles ===================================================== */
 
 h2 { 
-    margin-top: 51.2px;
-    margin-bottom: 12.8px;
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
     color: var(--dark-blue);
     font-weight: normal;
+}
+
+/* Links & Buttons ===================================================== */
+
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3dd705;
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: 0.8rem;
 }
 
 /* Header ===================================================== */
 
 header {
     background: #2d4a22;
-    padding: 32px 0px 160px;
+    padding: 2rem 0px 10rem;
     text-align: center;
 }
 
@@ -57,36 +77,36 @@ header {
 /* Balance ===================================================== */
 
 #balance {
-    margin-top: -128px;
+    margin-top: -8rem;
 }
 
 #balance h2 {
     color: #fff;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /* Cards ===================================================== */
 
 .card {
     background: #fff;
-    padding: 24px 32px;
-    border-radius: 4px;
-    margin-bottom: 32px;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
     color: var(--dark-blue);
 }
 
 .card h3 {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .card p {
-    font-size: 32px;
-    line-height: 48px;
-    margin-top: 16px;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 2rem;
 }
 
 .card.total {
@@ -97,21 +117,29 @@ header {
 /* Table ===================================================== */
 
 #data-table {
+    display: block;
     width: 100%;
     border-spacing: 0px 8px;
     color: #969cb3;
+
+    overflow-x: auto;
 }
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
-    border-radius: 4px 0 0 4px;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 table thead th {
     background: #fff;
     font-weight: normal;
     text-align: left;
-    padding: 16px 32px;
+    padding: 1rem 2rem;
 }
 
 table tbody tr {
@@ -124,7 +152,7 @@ table tbody tr:hover{
 
 table tbody td {
     background: #fff;
-    padding: 16px 32px;
+    padding: 1rem 2rem;
     font-weight: normal;
 }
 
@@ -144,7 +172,20 @@ td.expense {
 
 footer {
     text-align: center;
-    padding: 64px 0 32px;
+    padding: 4rem 0 2rem;
     color: var(--dark-blue);
     opacity: 0.6;
+}
+
+/* Responsive ===================================================== */
+
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 }
